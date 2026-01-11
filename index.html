@@ -95,6 +95,15 @@
         .footer-links a { color: var(--text-dim); margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
         .copyright { color: #555; font-size: 0.8rem; margin-top: 15px; }
 
+        /* 手机教程相关样式 */
+        .mobile-tutorial { margin-top: 25px; }
+        .mobile-tutorial h4 { margin-bottom: 15px; font-size: 1rem; color: var(--primary); }
+        .bilibili-video { width: 100%; height: 300px; border-radius: 10px; overflow: hidden; border: 1px solid var(--surface-border); margin-top: 15px; }
+        
+        /* 手机快速连接按钮 */
+        .mobile-quick-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #000; padding: 10px 15px; border-radius: 50px; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 8px; z-index: 99; box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3); transition: 0.3s; }
+        .mobile-quick-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4); }
+
         @media (max-width: 992px) { 
             .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; } 
             .hero-text h1 { font-size: 2.8rem; } 
@@ -102,6 +111,8 @@
             .server-card { width: 95%; max-width: none; margin: 0 auto; transform: none; padding: 25px; } 
             .nav-links { display: none; } 
             .tags { justify-content: center; } 
+            .bilibili-video { height: 200px; }
+            .mobile-quick-btn { bottom: 15px; right: 15px; padding: 8px 12px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -126,6 +137,11 @@
         </div>
     </nav>
 
+    <!-- 手机快速连接按钮 -->
+    <a href="#mobile-tutorial" class="mobile-quick-btn">
+        <i class="fas fa-mobile-alt"></i> 手机连接教程
+    </a>
+
     <div class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
@@ -137,6 +153,9 @@
                 <div class="hero-btns">
                     <a href="#faq" class="btn-lg btn-outline">
                         <i class="fas fa-terminal"></i> 新手指南
+                    </a>
+                    <a href="#mobile-tutorial" class="btn-lg btn-outline">
+                        <i class="fas fa-mobile-alt"></i> 手机连接教程
                     </a>
                 </div>
             </div>
@@ -335,6 +354,56 @@
     </div>
 </div>
 
+<div class="section" id="mobile-tutorial" style="background: rgba(0,0,0,0.2);">
+    <div class="container" style="max-width: 800px;">
+        <div class="section-title">
+            <h2>手机连接教程</h2>
+            <span></span>
+        </div>
+        
+        <div style="background: var(--surface); border-radius: 15px; padding: 30px; border: 1px solid var(--surface-border);">
+            <div style="text-align: center; margin-bottom: 25px;">
+                <i class="fas fa-mobile-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3 style="margin-bottom: 10px;">手机版我的世界连接服务器教程</h3>
+                <p style="color: var(--text-dim);">使用GeyserMC实现手机与Java版服务器互通</p>
+            </div>
+            
+            <div class="mobile-tutorial">
+                <h4>视频教程</h4>
+                <div class="bilibili-video">
+                    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115875348748244&bvid=BV13b6dBGE6V&cid=35317941910&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:100%;"></iframe>
+                </div>
+                
+                <h4 style="margin-top: 25px;">文字步骤说明</h4>
+                <ol style="color: var(--text-dim); padding-left: 20px; line-height: 1.8; margin-top: 15px;">
+                    <li>确保手机已安装<b>最新版我的世界基岩版</b>（Minecraft Bedrock）</li>
+                    <li>打开游戏，点击<b>"游戏"</b> → <b>"服务器"</b></li>
+                    <li>在服务器列表底部，点击<b>"添加服务器"</b></li>
+                    <li>填写服务器信息：
+                        <ul style="padding-left: 20px; margin: 10px 0;">
+                            <li><b>服务器名称</b>: 落幕曲服务器</li>
+                            <li><b>服务器地址</b>: mc.cnmbsb.vip</li>
+                            <li><b>端口</b>: 21294</li>
+                        </ul>
+                    </li>
+                    <li>点击<b>"保存"</b>然后点击服务器图标进入</li>
+                    <li>首次连接可能需要一些时间加载资源包，请耐心等待</li>
+                </ol>
+                
+                <div style="background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 8px; padding: 15px; margin-top: 20px;">
+                    <h4 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-lightbulb"></i> 注意事项</h4>
+                    <ul style="color: var(--text-dim); padding-left: 20px; line-height: 1.6;">
+                        <li>手机版与Java版部分模组功能可能略有差异</li>
+                        <li>建议使用WiFi网络以获得更好的连接体验</li>
+                        <li>如遇到连接问题，可尝试重启游戏或更换网络</li>
+                        <li>部分复杂模组界面在手机上操作可能不够便捷</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -448,6 +517,16 @@
         }
 
         fetchServerStatus();
+        
+        // 自动调整B站视频高度
+        window.addEventListener('resize', function() {
+            const videoIframe = document.querySelector('.bilibili-video iframe');
+            if(videoIframe && window.innerWidth < 992) {
+                videoIframe.style.height = '200px';
+            } else if(videoIframe) {
+                videoIframe.style.height = '300px';
+            }
+        });
     </script>
 </body>
 </html>
